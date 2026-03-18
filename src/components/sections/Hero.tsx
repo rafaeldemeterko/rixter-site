@@ -8,6 +8,7 @@ export function Hero() {
   return (
     <Section
       id="inicio"
+      withDefaultPadding={false}
       className="relative min-h-[680px] overflow-hidden bg-[#ffffff] lg:min-h-[760px]"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -24,32 +25,19 @@ export function Hero() {
         />
       </div>
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-4 top-1/2 z-[1] hidden w-[clamp(28rem,46vw,48rem)] -translate-y-1/2 xl:right-8 lg:block"
-      >
-        <Image
-          src="/assets/brand/outline-logo.svg"
-          alt=""
-          width={1080}
-          height={1080}
-          className="h-auto w-full"
-        />
-      </div>
-
-      <Container className="relative z-10">
-        <div className="max-w-3xl space-y-6">
-          <h1 className="max-w-3xl text-[clamp(3.56rem,6.27vw,5.37rem)] font-bold leading-[1.14] tracking-[-0.02em] text-[var(--color-text)]">
+      <Container className="relative z-10 grid min-h-[680px] items-center gap-12 py-14 sm:py-16 lg:min-h-[760px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:gap-10 lg:py-20 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
+        <div className="min-w-0 max-w-[56rem] space-y-6 xl:max-w-[60rem]">
+          <h1 className="max-w-[54rem] text-[clamp(3.56rem,6.27vw,5.37rem)] font-bold leading-[1.14] tracking-[-0.02em] text-[var(--color-text)] text-balance">
             <span className="block">Soluções em</span>
             <span className="block text-[var(--color-primary)]">Materiais Elétricos</span>
             <span className="block">para a Indústria</span>
           </h1>
 
-          <p className="max-w-2xl text-[1.45rem] leading-[1.45] font-light text-[var(--color-muted)]">
+          <p className="max-w-[46rem] text-[1.45rem] leading-[1.45] font-light text-[var(--color-muted)] text-pretty">
             {siteContent.hero.description}
           </p>
 
-          <ul className="flex flex-wrap gap-x-5 gap-y-3 pt-2">
+          <ul className="max-w-[46rem] flex flex-wrap gap-x-5 gap-y-3 pt-2">
             {siteContent.hero.highlights.map((item) => (
               <li key={item} className="inline-flex items-center gap-2">
                 <Image
@@ -83,6 +71,18 @@ export function Hero() {
             >
               {siteContent.hero.secondaryCta.label}
             </Button>
+          </div>
+        </div>
+
+        <div aria-hidden className="hidden items-center justify-end lg:flex">
+          <div className="w-full max-w-[720px] xl:max-w-[760px]">
+            <Image
+              src="/assets/brand/outline-logo.svg"
+              alt=""
+              width={1080}
+              height={1080}
+              className="ml-auto h-auto w-full"
+            />
           </div>
         </div>
       </Container>
