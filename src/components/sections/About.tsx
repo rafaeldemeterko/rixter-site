@@ -53,29 +53,47 @@ export function About() {
             ))}
           </div>
 
-          <ul className="grid w-full gap-3 pt-5 min-[1511px]:hidden">
-            {aboutCards.map((card) => (
-              <li
-                key={`mobile-${card.title}`}
-                className="rounded-[1rem] border border-[rgba(4,50,66,0.12)] bg-white/85 p-4 shadow-[0_10px_30px_rgba(4,50,66,0.1)] sm:p-5"
-              >
+          <div className="relative w-full pt-5 min-[1511px]:hidden">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 hidden lg:block"
+            >
+              <div className="absolute top-1/2 right-[-2%] w-[min(34rem,72%)] -translate-y-1/2 opacity-[0.55] xl:w-[min(38rem,74%)]">
                 <Image
-                  src={card.icon}
+                  src="/assets/brand/outline-logo.svg"
                   alt=""
-                  width={50}
-                  height={50}
-                  aria-hidden
-                  className="h-11 w-11 shrink-0 sm:h-[50px] sm:w-[50px]"
+                  width={1080}
+                  height={1080}
+                  className="h-auto w-full"
+                  style={{ filter: "grayscale(1) brightness(1.7) contrast(0.95)" }}
                 />
-                <p className="mt-2 text-[1.05rem] font-semibold text-[var(--color-primary)] sm:text-base">
-                  {card.title}
-                </p>
-                <p className="mt-2 text-[0.92rem] leading-[1.5] text-[#405064] sm:text-sm">
-                  {card.description}
-                </p>
-              </li>
-            ))}
-          </ul>
+              </div>
+            </div>
+
+            <ul className="relative z-10 grid w-full gap-3 lg:gap-4">
+              {aboutCards.map((card) => (
+                <li
+                  key={`mobile-${card.title}`}
+                  className="rounded-[1rem] border border-[rgba(4,50,66,0.12)] bg-white/85 p-4 shadow-[0_10px_30px_rgba(4,50,66,0.1)] sm:p-5"
+                >
+                  <Image
+                    src={card.icon}
+                    alt=""
+                    width={50}
+                    height={50}
+                    aria-hidden
+                    className="h-11 w-11 shrink-0 sm:h-[50px] sm:w-[50px]"
+                  />
+                  <p className="mt-2 text-[1.05rem] font-semibold text-[var(--color-primary)] sm:text-base">
+                    {card.title}
+                  </p>
+                  <p className="mt-2 text-[0.92rem] leading-[1.5] text-[#405064] sm:text-sm">
+                    {card.description}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div aria-hidden className="hidden items-center justify-end min-[1511px]:flex">
