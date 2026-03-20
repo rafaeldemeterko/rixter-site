@@ -34,48 +34,48 @@ export function About() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_62%_50%,rgba(197,204,227,0.32),transparent_62%)]"
       />
 
-      <Container className="relative z-10 grid gap-8 pt-4 pb-6 sm:pt-5 sm:pb-7 lg:min-h-[740px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:items-center lg:gap-10 lg:pt-10 lg:pb-8 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
+      <Container className="relative z-10 grid gap-8 pt-8 pb-10 sm:pt-10 sm:pb-10 lg:min-h-[740px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:items-center lg:gap-10 lg:pt-10 lg:pb-8 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
         <div className="min-w-0 w-full lg:max-w-[56rem] xl:max-w-[60rem]">
-            <p className="text-[2.17rem] leading-[1.02] font-light tracking-[0.11em] text-[var(--color-primary)] uppercase">
-              {siteContent.about.eyebrow}
-            </p>
+          <p className="text-[0.98rem] leading-[1.1] font-light tracking-[0.14em] text-[var(--color-primary)] uppercase sm:text-[1.2rem] lg:text-[2.17rem] lg:tracking-[0.11em]">
+            {siteContent.about.eyebrow}
+          </p>
 
-            <h2 className="mt-5 sm:mt-6 max-w-[54rem] text-[clamp(3.22rem,5.72vw,4.91rem)] leading-[1.1] font-bold tracking-[-0.02em] text-[var(--color-text)] text-balance">
-              <span className="block">Tradição e Experiência</span>
-              <span className="block">no Mercado Elétrico</span>
-            </h2>
+          <h2 className="mt-4 max-w-[54rem] text-[clamp(2.5rem,8.6vw,3.35rem)] leading-[1.08] font-bold tracking-[-0.03em] text-[var(--color-text)] text-balance sm:mt-5 sm:text-[clamp(2.9rem,7vw,4.1rem)] sm:leading-[1.1] lg:mt-6 lg:text-[clamp(3.22rem,5.72vw,4.91rem)] lg:tracking-[-0.02em]">
+            <span className="lg:block">Tradição e Experiência </span>
+            <span className="lg:block">no Mercado Elétrico</span>
+          </h2>
 
-            <div className="mt-8 sm:mt-9 max-w-[48rem] space-y-7 text-[1.77rem] leading-[1.4] font-light text-[var(--color-primary)]">
-              {siteContent.about.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-pretty">
-                  {paragraph}
+          <div className="mt-6 max-w-[34rem] space-y-5 text-[1rem] leading-[1.55] font-light text-[var(--color-primary)] sm:mt-8 sm:max-w-[40rem] sm:space-y-6 sm:text-[1.18rem] lg:mt-9 lg:max-w-[48rem] lg:space-y-7 lg:text-[1.77rem] lg:leading-[1.4]">
+            {siteContent.about.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-pretty">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <ul className="grid gap-3 pt-4 sm:grid-cols-2 sm:pt-5 lg:hidden">
+            {aboutCards.map((card) => (
+              <li
+                key={`mobile-${card.title}`}
+                className="rounded-[1rem] border border-[rgba(4,50,66,0.12)] bg-white/85 p-4 shadow-[0_10px_30px_rgba(4,50,66,0.1)] sm:p-5"
+              >
+                <Image
+                  src={card.icon}
+                  alt=""
+                  width={50}
+                  height={50}
+                  aria-hidden
+                  className="h-11 w-11 shrink-0 sm:h-[50px] sm:w-[50px]"
+                />
+                <p className="mt-2 text-[1.05rem] font-semibold text-[var(--color-primary)] sm:text-base">
+                  {card.title}
                 </p>
-              ))}
-            </div>
-
-            <ul className="grid gap-3 pt-2 sm:grid-cols-2 lg:hidden">
-              {aboutCards.map((card) => (
-                <li
-                  key={`mobile-${card.title}`}
-                  className="rounded-[1rem] border border-[rgba(4,50,66,0.12)] bg-white/85 p-4 shadow-[0_10px_30px_rgba(4,50,66,0.1)]"
-                >
-                  <Image
-                    src={card.icon}
-                    alt=""
-                    width={50}
-                    height={50}
-                    aria-hidden
-                    className="h-[50px] w-[50px] shrink-0"
-                  />
-                  <p className="mt-2 text-base font-semibold text-[var(--color-primary)]">
-                    {card.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-[1.45] text-[#405064]">
-                    {card.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
+                <p className="mt-2 text-[0.92rem] leading-[1.5] text-[#405064] sm:text-sm">
+                  {card.description}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div aria-hidden className="hidden items-center justify-end lg:flex">

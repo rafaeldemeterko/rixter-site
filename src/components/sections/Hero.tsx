@@ -25,19 +25,19 @@ export function Hero() {
         />
       </div>
 
-      <Container className="relative z-10 grid min-h-[680px] items-center gap-12 py-14 sm:py-16 lg:min-h-[760px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:gap-10 lg:py-20 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
-        <div className="min-w-0 max-w-[56rem] space-y-6 xl:max-w-[60rem]">
-          <h1 className="max-w-[54rem] text-[clamp(3.56rem,6.27vw,5.37rem)] font-bold leading-[1.14] tracking-[-0.02em] text-[var(--color-text)] text-balance">
-            <span className="block">Soluções em</span>
-            <span className="block text-[var(--color-primary)]">Materiais Elétricos</span>
-            <span className="block">para a Indústria</span>
+      <Container className="relative z-10 grid min-h-[680px] items-center gap-10 py-10 sm:py-16 lg:min-h-[760px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:gap-10 lg:py-20 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
+        <div className="min-w-0 max-w-[56rem] space-y-5 sm:space-y-6 xl:max-w-[60rem]">
+          <h1 className="max-w-[54rem] text-[clamp(2.85rem,10vw,3.85rem)] font-bold leading-[1.08] tracking-[-0.03em] text-[var(--color-text)] text-balance sm:text-[clamp(3.35rem,7.1vw,4.7rem)] sm:leading-[1.12] lg:text-[clamp(3.56rem,6.27vw,5.37rem)] lg:leading-[1.14]">
+            <span className="lg:block">Soluções em </span>
+            <span className="text-[var(--color-primary)] lg:block">Materiais Elétricos </span>
+            <span className="lg:block">para a Indústria</span>
           </h1>
 
-          <p className="max-w-[46rem] text-[1.45rem] leading-[1.45] font-light text-[var(--color-muted)] text-pretty">
+          <p className="max-w-[34rem] text-[1rem] leading-[1.55] font-light text-[var(--color-muted)] text-pretty sm:max-w-[40rem] sm:text-[1.18rem] lg:max-w-[46rem] lg:text-[1.45rem]">
             {siteContent.hero.description}
           </p>
 
-          <ul className="max-w-[46rem] flex flex-wrap gap-x-5 gap-y-3 pt-2">
+          <ul className="max-w-[34rem] flex flex-wrap gap-x-4 gap-y-2 pt-1 sm:max-w-[40rem] sm:gap-x-5 sm:gap-y-3 sm:pt-2 lg:max-w-[46rem]">
             {siteContent.hero.highlights.map((item) => (
               <li key={item} className="inline-flex items-center gap-2">
                 <Image
@@ -46,19 +46,19 @@ export function Hero() {
                   width={18}
                   height={18}
                   aria-hidden
-                  className="h-[18px] w-[18px] shrink-0"
+                  className="h-4 w-4 shrink-0 sm:h-[18px] sm:w-[18px]"
                 />
-                <span className="text-[1.45rem] leading-[1.45] font-light text-[var(--color-text)]">
+                <span className="text-[1.05rem] leading-[1.4] font-light text-[var(--color-text)] sm:text-[1.18rem] lg:text-[1.45rem] lg:leading-[1.45]">
                   {item}
                 </span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-3 flex flex-col gap-3 sm:mt-4 sm:flex-row">
             <Button
               href={siteContent.hero.primaryCta.href}
-              className="rounded-2xl px-9 py-[1.05rem] text-[1.38rem] font-light shadow-[0_10px_24px_rgba(4,50,66,0.2)] sm:px-11"
+              className="rounded-2xl px-7 py-3.5 text-[1rem] font-light shadow-[0_10px_24px_rgba(4,50,66,0.2)] sm:px-11 sm:py-[1.05rem] sm:text-[1.38rem]"
             >
               {siteContent.hero.primaryCta.label}
               {" ->"}
@@ -67,7 +67,7 @@ export function Hero() {
             <Button
               href={siteContent.hero.secondaryCta.href}
               variant="secondary"
-              className="rounded-2xl border border-[var(--color-primary)] px-9 py-[1.05rem] text-[1.38rem] font-light text-[var(--color-primary)] shadow-[0_10px_24px_rgba(4,50,66,0.2)] sm:px-11"
+              className="rounded-2xl border border-[var(--color-primary)] px-7 py-3.5 text-[1rem] font-light text-[var(--color-primary)] shadow-[0_10px_24px_rgba(4,50,66,0.2)] sm:px-11 sm:py-[1.05rem] sm:text-[1.38rem]"
             >
               {siteContent.hero.secondaryCta.label}
             </Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type AnimatedStatValueProps = {
   value: string;
@@ -22,8 +22,39 @@ export function AnimatedStatValue({
 }: AnimatedStatValueProps) {
   const target = useMemo(() => parseNumericPlus(value), [value]);
   const [current, setCurrent] = useState(0);
+  const [hasEnteredView, setHasEnteredView] = useState(false);
+  const valueRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    const node = valueRef.current;
+    if (!node || hasEnteredView) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setHasEnteredView(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.35,
+      },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [hasEnteredView]);
+
+  useEffect(() => {
+    if (!hasEnteredView) {
+      return;
+    }
+
     if (target === null) {
       return;
     }
@@ -44,12 +75,29 @@ export function AnimatedStatValue({
     frame = requestAnimationFrame(tick);
 
     return () => cancelAnimationFrame(frame);
-  }, [durationMs, target]);
+  }, [durationMs, hasEnteredView, target]);
 
   if (target === null) {
-    return <>{value}</>;
+    return (
+      <span
+        ref={valueRef}
+        className={`inline-block transition-opacity duration-150 ease-out ${
+          hasEnteredView ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {value}
+      </span>
+    );
   }
 
-  return <>{`${current}+`}</>;
+  return (
+    <span
+      ref={valueRef}
+      className={`inline-block transition-opacity duration-150 ease-out ${
+        hasEnteredView ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      {`${current}+`}
+    </span>
+  );
 }
-
