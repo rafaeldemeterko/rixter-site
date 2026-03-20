@@ -81,46 +81,53 @@ export const siteContent = {
     },
   ],
 
+  solutionsSection: {
+    eyebrow: "NOSSAS SOLUÇÕES",
+    title: "Categorias de Produtos",
+    description:
+      "Representamos uma linha completa de materiais elétricos para atender projetos de todos os portes e segmentos.",
+  },
+
   solutions: [
     {
-      title: "Metais e Ligas Metálicas",
+      title: "METAIS E LIGAS METÁLICAS",
       description:
         "Barramentos, vergalhões, tarugos e tubos em diversas ligas metálicas.",
       bullets: [
-        "Cobre e alumínio",
-        "Bronze, latão, aço inox e ferro",
+        "Cobre e Alumínio",
+        "Bronze, Latão, Aço Inox, Ferro",
         "Nylon 6.0",
-        "Bobinas de latão e cobre cortadas nas medidas",
+        "Bobinas de Latão e Cobre cortadas nas medidas",
       ],
     },
     {
-      title: "Eletrodutos Metálicos",
+      title: "ELETRODUTOS METÁLICOS",
       description:
         "Eletrodutos de aço carbono e conexões com diversas normas e acabamentos.",
       bullets: [
-        "Pré-zincados (PZ) ou galvanizados a fogo (GF)",
+        "Pré-Zincados (PZ) ou Galvanizados à Fogo (GF)",
         "Roscas BSP e NPT",
-        "Eletrodutos de alumínio sch 40 ou 80 - T6",
-        "Eletrodutos em aço inoxidável",
+        "Eletrodutos de Alumínio - sch 40 ou 80 - T6",
+        "Eletrodutos em Aço Inoxidável (inox)",
       ],
     },
     {
-      title: "Tubos e Normas Técnicas",
+      title: "TUBOS E NORMAS TÉCNICAS",
       description:
         "Eletrodutos e tubos conforme normas NBR para diversas aplicações.",
       bullets: [
         "NBR-5598, NBR-5597, NBR-13057, NBR-5624",
-        "Tubos de aço carbono preto/galvanizado NBR-5580",
+        "Tubos de Aço Carbono Preto/Galvanizado NBR-5580",
       ],
     },
     {
-      title: "Dutos e Acessórios",
+      title: "DUTOS E ACESSÓRIOS",
       description:
         "Dutos corrugados e acessórios para infraestrutura de cabos e drenagem.",
       bullets: [
-        'Dutos corrugados para infraestrutura de cabos até 200mm (8")',
-        'Tubos corrugados para drenagem até 200mm (8")',
-        "Luvas, tampões e anel de vedação",
+        'Dutos Corrugados para Infraestrutura de Cabos até 200mm (8")',
+        'Tubos Corrugados para Drenagem até 200mm (8")',
+        "Luvas, Tampões, Anel de vedação",
         "Fita de advertência",
       ],
     },
