@@ -19,7 +19,7 @@ export function Header() {
           />
         </a>
 
-        <nav className="hidden flex-1 items-center justify-center gap-[clamp(1rem,1.65vw,2rem)] md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-[clamp(1rem,1.65vw,2rem)] lg:flex">
           {siteContent.navigation.map((item) => (
             <a
               key={item.href}
@@ -31,11 +31,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="shrink-0 md:hidden">
+        <div className="shrink-0 lg:hidden">
           <MobileMenu items={siteContent.navigation} />
         </div>
 
-        <div className="hidden shrink-0 md:block">
+        <div className="hidden shrink-0 lg:block lg:pr-2">
           <Button
             href="#contato"
             className="whitespace-nowrap px-[clamp(1rem,1.3vw,1.6rem)] py-[clamp(0.72rem,0.82vw,0.98rem)] text-[clamp(0.8rem,0.82vw,0.94rem)]"

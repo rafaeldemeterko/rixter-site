@@ -8,7 +8,7 @@ export function Footer() {
       <Container className="pt-10 pb-5 sm:pt-12 lg:pt-12 lg:pb-6">
         <div className="space-y-0">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,290px)_minmax(0,1fr)] lg:items-end lg:gap-10 xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)] xl:gap-12">
-            <div className="flex min-w-0 h-full flex-col items-start justify-end">
+            <div className="order-2 flex min-w-0 h-full flex-col items-start justify-end lg:order-1">
               <Image
                 src="/assets/brand/solid-logo.svg"
                 alt={`${siteContent.company.shortName} logo`}
@@ -22,7 +22,7 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="flex min-w-0 h-full flex-col justify-start">
+            <div className="order-1 flex min-w-0 h-full flex-col justify-start lg:order-2">
               <div className="grid gap-8 sm:grid-cols-2 lg:min-h-[210px] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)_minmax(0,0.9fr)] lg:gap-x-10 xl:gap-x-16 2xl:gap-x-20">
                 <div className="flex min-w-0 h-full w-full flex-col lg:min-h-[210px]">
                   <h4 className="text-[1.12rem] font-bold uppercase leading-none text-[#f3f7fb] sm:text-[1.25rem] lg:text-[1.55rem]">
@@ -67,13 +67,23 @@ export function Footer() {
 
           <div className="grid gap-3 pt-8 sm:pt-6 lg:-mt-6 lg:grid-cols-[minmax(0,290px)_minmax(0,0.95fr)_minmax(0,1.15fr)_minmax(0,0.9fr)] lg:items-baseline lg:gap-x-10 lg:pt-0 xl:-mt-8 xl:grid-cols-[minmax(0,320px)_minmax(0,0.95fr)_minmax(0,1.15fr)_minmax(0,0.9fr)] xl:gap-x-16 2xl:gap-x-20">
             <div className="hidden lg:block" />
-            <p className="min-w-0 text-[0.98rem] leading-[1.45] font-light text-[#d6e1ea] [overflow-wrap:anywhere] sm:text-[1.08rem] lg:col-span-2 lg:justify-self-center lg:text-center lg:text-[1.2rem] lg:leading-none">
-              Conectando os melhores fabricantes de materiais elétricos às empresas
-              que constroem o Brasil.
-            </p>
-            <p className="min-w-0 text-[1.28rem] font-bold leading-[1.05] text-[#f3f7fb] sm:text-[1.5rem] lg:justify-self-start lg:text-[1.9rem]">
-              Deus é fiel e justo!
-            </p>
+            <div className="min-w-0 lg:col-span-2 lg:justify-self-center lg:text-center">
+              <p className="text-[0.98rem] leading-[1.45] font-light text-[#d6e1ea] [overflow-wrap:anywhere] sm:text-[1.08rem] lg:text-[1.2rem] lg:leading-none">
+                Conectando os melhores fabricantes de materiais elétricos às empresas
+                que constroem o Brasil.
+              </p>
+              <p className="mt-4 hidden translate-y-2 text-[0.68rem] font-medium tracking-[0.04em] text-[#a8bfcd]/80 [filter:blur(0.35px)] lg:block lg:text-[0.74rem]">
+                site feito por @rafaeldemeterko._
+              </p>
+            </div>
+            <div className="min-w-0 lg:justify-self-start">
+              <p className="text-[1.28rem] font-bold leading-[1.05] text-[#f3f7fb] sm:text-[1.5rem] lg:text-[1.9rem]">
+                Deus é fiel e justo!
+              </p>
+              <p className="mt-4 translate-y-1 text-[0.68rem] font-medium tracking-[0.04em] text-[#a8bfcd]/80 [filter:blur(0.35px)] sm:text-[0.72rem] lg:hidden">
+                site feito por @rafaeldemeterko._
+              </p>
+            </div>
           </div>
         </div>
       </Container>

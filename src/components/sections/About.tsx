@@ -34,26 +34,26 @@ export function About() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_62%_50%,rgba(197,204,227,0.32),transparent_62%)]"
       />
 
-      <Container className="relative z-10 grid gap-8 pt-8 pb-10 sm:pt-10 sm:pb-10 lg:min-h-[740px] lg:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] lg:items-center lg:gap-10 lg:pt-10 lg:pb-8 xl:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
-        <div className="min-w-0 w-full lg:max-w-[56rem] xl:max-w-[60rem]">
-          <p className="text-[0.98rem] leading-[1.1] font-light tracking-[0.14em] text-[var(--color-primary)] uppercase sm:text-[1.2rem] lg:text-[2.17rem] lg:tracking-[0.11em]">
+      <Container className="relative z-10 grid grid-cols-1 gap-8 pt-8 pb-10 sm:pt-10 sm:pb-10 lg:min-h-[740px] min-[1511px]:grid-cols-[minmax(0,1.16fr)_minmax(24rem,0.84fr)] min-[1511px]:items-center min-[1511px]:gap-10 lg:pt-10 lg:pb-8 min-[1760px]:grid-cols-[minmax(0,1.22fr)_minmax(28rem,0.78fr)] 2xl:gap-14">
+        <div className="min-w-0 w-full max-w-[42rem] sm:max-w-[52rem] md:max-w-none min-[1511px]:max-w-[56rem] min-[1760px]:max-w-[60rem]">
+          <p className="text-[0.98rem] leading-[1.1] font-light tracking-[0.14em] text-[var(--color-primary)] uppercase sm:text-[1.2rem] lg:text-[1.55rem] lg:tracking-[0.12em] min-[1511px]:text-[2.17rem] min-[1511px]:tracking-[0.11em]">
             {siteContent.about.eyebrow}
           </p>
 
-          <h2 className="mt-4 max-w-[54rem] text-[clamp(2.5rem,8.6vw,3.35rem)] leading-[1.08] font-bold tracking-[-0.03em] text-[var(--color-text)] text-balance sm:mt-5 sm:text-[clamp(2.9rem,7vw,4.1rem)] sm:leading-[1.1] lg:mt-6 lg:text-[clamp(3.22rem,5.72vw,4.91rem)] lg:tracking-[-0.02em]">
-            <span className="lg:block">Tradição e Experiência </span>
-            <span className="lg:block">no Mercado Elétrico</span>
+          <h2 className="mt-4 max-w-none text-[clamp(2.5rem,8.6vw,3.35rem)] leading-[1.08] font-bold tracking-[-0.03em] text-[var(--color-text)] sm:mt-5 sm:text-[clamp(2.9rem,7vw,4.1rem)] sm:leading-[1.1] lg:mt-6 lg:max-w-none lg:text-[clamp(2.9rem,4.7vw,4.15rem)] lg:leading-[1.04] lg:tracking-[-0.025em] min-[1511px]:max-w-[54rem] min-[1511px]:text-[clamp(3.22rem,5.72vw,4.91rem)] min-[1511px]:leading-[1.08] min-[1511px]:tracking-[-0.02em] min-[1511px]:text-balance">
+            <span className="min-[1511px]:block">Tradição e Experiência </span>
+            <span className="min-[1511px]:block">no Mercado Elétrico</span>
           </h2>
 
-          <div className="mt-6 max-w-[34rem] space-y-5 text-[1rem] leading-[1.55] font-light text-[var(--color-primary)] sm:mt-8 sm:max-w-[40rem] sm:space-y-6 sm:text-[1.18rem] lg:mt-9 lg:max-w-[48rem] lg:space-y-7 lg:text-[1.77rem] lg:leading-[1.4]">
+          <div className="mt-6 max-w-[34rem] space-y-5 text-[1rem] leading-[1.55] font-light text-[var(--color-primary)] sm:mt-8 sm:max-w-[40rem] md:max-w-none sm:space-y-6 sm:text-[1.18rem] lg:mt-9 lg:space-y-6 lg:text-[1.45rem] lg:leading-[1.46] min-[1511px]:max-w-[48rem] min-[1511px]:space-y-7 min-[1511px]:text-[1.77rem] min-[1511px]:leading-[1.4]">
             {siteContent.about.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="text-pretty">
+              <p key={paragraph} className="min-[1511px]:text-pretty">
                 {paragraph}
               </p>
             ))}
           </div>
 
-          <ul className="grid gap-3 pt-4 sm:grid-cols-2 sm:pt-5 lg:hidden">
+          <ul className="grid w-full gap-3 pt-5 min-[1511px]:hidden">
             {aboutCards.map((card) => (
               <li
                 key={`mobile-${card.title}`}
@@ -78,7 +78,7 @@ export function About() {
           </ul>
         </div>
 
-        <div aria-hidden className="hidden items-center justify-end lg:flex">
+        <div aria-hidden className="hidden items-center justify-end min-[1511px]:flex">
           <div className="relative w-full max-w-[720px] xl:max-w-[760px]">
             <Image
               src="/assets/brand/outline-logo.svg"
