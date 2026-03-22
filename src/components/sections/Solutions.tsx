@@ -1,9 +1,60 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { siteContent } from "@/content/site";
 
 export function Solutions() {
   const { solutionsSection, solutions } = siteContent;
+  const [visibleCards, setVisibleCards] = useState(() =>
+    solutions.map(() => false),
+  );
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const index = Number(
+            (entry.target as HTMLElement).dataset.solutionIndex,
+          );
+
+          if (Number.isNaN(index)) {
+            return;
+          }
+
+          setVisibleCards((prev) => {
+            if (prev[index]) {
+              return prev;
+            }
+
+            const next = [...prev];
+            next[index] = true;
+            return next;
+          });
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -8% 0px",
+      },
+    );
+
+    cardRefs.current.forEach((node) => {
+      if (node) {
+        observer.observe(node);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Section
@@ -33,10 +84,23 @@ export function Solutions() {
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:mt-12">
-            {solutions.map((solution) => (
+            {solutions.map((solution, index) => (
               <article
                 key={solution.title}
-                className="flex flex-col rounded-[1.5rem] border border-[rgba(4,50,66,0.12)] bg-[#f9fbfc] p-6 shadow-[5px_7px_18px_rgba(0,0,0,0.12)] sm:p-7 md:h-full md:min-h-[29rem] lg:min-h-[25rem] xl:min-h-[23.5rem]"
+                ref={(node) => {
+                  cardRefs.current[index] = node;
+                }}
+                data-solution-index={index}
+                style={{
+                  transitionDelay: visibleCards[index]
+                    ? `${Math.floor(index / 2) * 180}ms`
+                    : "0ms",
+                }}
+                className={`flex flex-col rounded-[1.5rem] border border-[rgba(4,50,66,0.12)] bg-[#f9fbfc] p-6 shadow-[5px_7px_18px_rgba(0,0,0,0.12)] transition-[opacity,transform] duration-[950ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none motion-reduce:transition-none motion-reduce:opacity-100 sm:p-7 md:h-full md:min-h-[29rem] lg:min-h-[25rem] xl:min-h-[23.5rem] ${
+                  visibleCards[index]
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-10 opacity-0"
+                }`}
               >
                 <div className="flex items-start gap-4 sm:gap-5">
                   <div
